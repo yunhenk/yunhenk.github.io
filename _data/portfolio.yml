@@ -1,10 +1,10 @@
 -   id: 1
     title: My Project    
-    img: assets\1.jpg
+    img: 1.jpg
     width: 8
     height: 2
 -   id: 2
     title: Some other project I did 
-    img: assets\2.jpg
+    img: 2.jpg
     width: 4
     height: 2
