@@ -1,15 +1,32 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+{% comment %}
+  This inserts the "about" photo and text from `_config.yml`.
+  You can edit it there (jekyll needs restart!) or remove it and provide your own photo/text.
+  Don't forget to add the `me` class to the photo, like this: `![alt](src){:.me}`.
+{% endcomment %}
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+{% if site.author.photo %}
+  ![{{ site.author.name }}]({{ site.author.photo }}){:.me}
+{% endif %}
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+{{ site.author.about }}
+
+[write something about self]
+
+***
+
+## References
+
+### Design
+
+* Based on [Hyde](http://hyde.getpoole.com/) by [`@mdo`](https://twitter.com/mdo).
+
+### Icons
+
+* [Wreath](https://thenounproject.com/term/laurel-wreath/203146/) by [Nick Abrams](https://thenounproject.com/nabrams/) from the [Noun Project](https://thenounproject.com/).
+
+[usr]: /how-to-find-a-short-username

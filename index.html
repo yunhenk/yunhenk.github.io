@@ -1,61 +1,58 @@
 ---
 layout: default
+title: Blog
 ---
 
-<div class="home">
-  
-  
- <div class="col col-12">
-      <div class="col col-3">
-          <div class="block glass"  style="background-image:url(assets/avatar.jpg)">      
-          </div>
-      </div>
-      <div class="col col-9">
-        <div class="block glass">
-            <div class="block-body">
-                <h2>Yo, I'm Dude Labouwski</h2>
-                <p class="grey-text">Aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores ausLorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus Lorepsum ipsum lores aus</p>
-            </div>
-        </div>
-      </div>  
-  </div>
-  <div class="col col-12">
-    {% for port in site.data.portfolio %}
-      <div class="col col-{{port.width}}">
-        <div class="block" style="background-image:url(assets/{{port.img}})">
-            <div class="block-body height-{{port.height}}">              
-                <h2 class="align-bottom-right">
-                  {{ port.title }}
-                </h2>
-            </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-  <div class="col col-9">
-    {% for post in site.posts %}
-      <div class="col col-{{post.width}}">
-        <div class="block {{post.color}}">
-            <div class="block-body height-{{post.height}}">
-                <span class="post-meta white-text">{{ post.date | date: "%b %-d, %Y" }}</span>
+{% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul><hr/>{% endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}" class="page-title">{{ currentdate }}</h2>
+    <ul class="related-posts">
+    {% assign date = currentdate %}
+  {% endif %}
+  <li>
+    <h4>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <span>{{ post.title }}</span>
+        <small>{{ post.date | date: "%m/%d" }}</small>
+      </a>
+    </h4>
+  </li>
+  {% if forloop.last %}</ul><hr/>{% endif %}
+{% endfor %}
 
-                <h2>
-                  <a class="post-link white-text" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-            </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-    <div class="col col-3">
-        <div class="block glass">
-            <div class="block-body">
-                <h3 class="margin-bot">Skills</h3>                
-                {% for skill in site.data.skills %}
-                <span class="post-meta white-text">{{skill.descr}}</span>
-                <div class="progress margin-bot"><div class="progress-{{skill.xp}}"></div></div>                
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+{% if false %}
+<!-- <div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %}
 </div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div> -->
+{% endif %}

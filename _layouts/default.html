@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   {% include head.html %}
 
   <body>
 
-    {% include header.html %}    
+    <main class="content container">
+      {{ content }}
+    </main>
 
-    <div class="page-content margin-bot-big">
-      <div class="wrapper">        
-        {{ content }}
-      </div>
-    </div>
+    {% include sidebar.html %}
 
-    {% include footer.html %}
-
+    <script src="{{ site.baseurl }}/public/js/hydejack.js" async></script>
   </body>
-
 </html>
