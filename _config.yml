@@ -17,3 +17,9 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+  auto_ids:       true
+  toc_levels:     1..3
