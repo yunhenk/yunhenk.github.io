@@ -4,58 +4,15 @@ layout: default
 
 <div class="home">
   
-  
- <div class="col col-12">
-      <div class="col col-3">
-          <div class="block glass"  style="background-image:url(assets/figure.jpg)">      
-          </div>
-      </div>
-      <div class="col col-9">
-        <div class="block glass">
-            <div class="block-body">
-                <h2>Yo,this is yunhe's blog!</h2>
-                <p class="grey-text">I'm a master majoring in datamining and machine learning.This is my learning note.</p>
-            </div>
-        </div>
-      </div>  
-  </div>
-  <div class="col col-12">
-    {% for port in site.data.portfolio %}
-      <div class="col col-{{port.width}}">
-        <div class="block" style="background-image:url(assets/{{port.img}})">
-            <div class="block-body height-{{port.height}}">              
-                <h2 class="align-bottom-right">
-                  {{ port.title }}
-                </h2>
-            </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-  <div class="col col-9">
+  <ul class="posts">
     {% for post in site.posts %}
-      <div class="col col-{{post.width}}">
-        <div class="block {{post.color}}">
-            <div class="block-body height-{{post.height}}">
-                <span class="post-meta white-text">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-                <h2>
-                  <a class="post-link white-text" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-            </div>
-        </div>
-      </div>
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <br>
+        {{ post.excerpt }}
+      </li>
     {% endfor %}
-    </div>
-    <div class="col col-3">
-        <div class="block glass">
-            <div class="block-body">
-                <h3 class="margin-bot">Skills</h3>                
-                {% for skill in site.data.skills %}
-                <span class="post-meta white-text">{{skill.descr}}</span>
-                <div class="progress margin-bot"><div class="progress-{{skill.xp}}"></div></div>                
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+  </ul>
+
 </div>
