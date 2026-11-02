@@ -1,0 +1,37 @@
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 0;
+}
+
+.feature__wrapper::before,
+.feature__wrapper::after {
+  display: none;
+}
+
+.feature__item {
+  width: auto;
+  margin: 0;
+  padding: 28px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  float: none;
+}
+
+.feature__item .archive__item-title {
+  margin-top: 0;
+}
+
+.feature__item .archive__item-excerpt {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .feature__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
