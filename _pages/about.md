@@ -3,7 +3,6 @@ layout: splash
 permalink: /
 title: "Writing & Programming"
 excerpt: "A personal site by Yunhe."
-author_profile: false
 feature_row:
   - title: "Writing"
     excerpt: "Essays, notes, and ideas about the things I am thinking through."

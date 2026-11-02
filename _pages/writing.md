@@ -2,7 +2,6 @@
 layout: archive
 title: "Writing"
 permalink: /writing/
-author_profile: false
 ---
 
 Essays, notes, and longer-form writing.

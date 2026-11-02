@@ -2,7 +2,6 @@
 layout: archive
 title: "Programming"
 permalink: /programming/
-author_profile: false
 ---
 
 Projects, code, and technical notes.
